@@ -191,5 +191,5 @@ plot(DCfit)
 ##Predicted numbers of rented bikes
 dfpred <- data.frame(Temperature = 0, WindSpeed = .5,
                      Humidity = 20, Season="Winter")
-predict(Seoulfit, newdata = dfpred,level=.9,interval='prediction')
-predict(DCfit, newdata = dfpred,level=.9,interval='prediction')
+exp(predict(Seoulfit, newdata = dfpred,level=.9,interval='prediction'))
+exp(predict(DCfit, newdata = dfpred,level=.9,interval='prediction'))
