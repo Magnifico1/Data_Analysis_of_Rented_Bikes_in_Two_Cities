@@ -78,7 +78,7 @@ ggplot(BikeSeoul[year(BikeSeoul$Date)==2018,])+
   stat_smooth(aes(Date,Temperature))+
   ggtitle("Seoul Temperature Variation in 2018")+
   theme(plot.title = element_text(hjust = 0.5))+
-  ylab("Temperature (캜)")+
+  ylab("Temperature (째C)")+
   scale_y_continuous(breaks=c(-20,-10,0,10,20,30,40))
 
 ggplot(BikeDC[year(BikeDC$Date)==2012,])+
@@ -86,7 +86,7 @@ ggplot(BikeDC[year(BikeDC$Date)==2012,])+
   stat_smooth(aes(Date,Temperature))+
   ggtitle("Washington DC Temperature Variation in 2012")+
   theme(plot.title = element_text(hjust = 0.5))+
-  ylab("Temperature (캜)")+
+  ylab("Temperature (째C)")+
   scale_y_continuous(breaks=c(-10,0,10,20,30,40))+ylim(-10,40)
 
 ##Effect of Season on average number of rented bikes
@@ -132,7 +132,7 @@ ggplot(BikeSeoul)+geom_point(aes(Temperature,Count,colour=Temperature))+
   geom_histogram(aes(Temperature),bins=35,alpha=0.5)+
   scale_color_gradient2(midpoint=mean(BikeSeoul$Temperature),
                         low="blue",mid="yellow3",high="red1",space ="Lab")+
-  xlab("Temperature (캜)")+ylab("Number of Rented Bikes")+
+  xlab("Temperature (째C)")+ylab("Number of Rented Bikes")+
   ggtitle("Seoul Bike Demand by Temperature")+
   theme(plot.title = element_text(hjust = 0.5))
 
@@ -154,7 +154,7 @@ ggplot(BikeDC)+geom_point(aes(Temperature,Count,colour=Temperature))+
   geom_histogram(aes(Temperature),bins=65,alpha=0.5)+
   scale_color_gradient2(midpoint=mean(BikeSeoul$Temperature),
                         low="blue",mid="yellow3",high="red1",space ="Lab")+
-  xlab("Temperature (캜)")+ylab("Number of Rented Bikes")+
+  xlab("Temperature (째C)")+ylab("Number of Rented Bikes")+
   ggtitle("DC Bike Demand by Temperature")+
   theme(plot.title = element_text(hjust = 0.5))
 
@@ -183,6 +183,10 @@ summary(DCfit)
 ##Display 97% confidence intervals for the estimated regression coefficients
 confint(Seoulfit,level=.97)
 confint(DCfit,level=.97)
+
+##Testing model assumptions
+plot(Seoulfit)
+plot(DCfit)
 
 ##Predicted numbers of rented bikes
 dfpred <- data.frame(Temperature = 0, WindSpeed = .5,
