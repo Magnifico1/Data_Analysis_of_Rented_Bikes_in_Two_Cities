@@ -187,7 +187,7 @@ confint(DCfit,level=.97)
 ##Testing model assumptions
 plot(fitted(Seoulfit), log(BikeSeoul$Count))
 plot(Seoulfit)
-plot(fitted(DCfit), log(BikeSeoul$Count))
+plot(fitted(DCfit), log(BikeDC$Count))
 plot(DCfit)
 
 ##Predicted numbers of rented bikes
