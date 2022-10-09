@@ -185,7 +185,9 @@ confint(Seoulfit,level=.97)
 confint(DCfit,level=.97)
 
 ##Testing model assumptions
+plot(log(Count)~Season+Temperature+Humidity+WindSpeed,data=BikeSeoul)
 plot(Seoulfit)
+plot(log(Count)~Season+Temperature+Humidity+WindSpeed,data=BikeDC)
 plot(DCfit)
 
 ##Predicted numbers of rented bikes
