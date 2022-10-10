@@ -187,11 +187,12 @@ confint(DCfit,level=.97)
 ##Testing model assumptions
 plot(fitted(Seoulfit), log(BikeSeoul$Count))
 plot(Seoulfit)
-p <- plot_model(Seoulfit, type = "diag")
-plot_grid(p)
-
 plot(fitted(DCfit), log(BikeDC$Count))
 plot(DCfit)
+
+library(sjPlot)
+p <- plot_model(Seoulfit, type = "diag")
+plot_grid(p)
 p <- plot_model(DCfit, type = "diag")
 plot_grid(p)
 
