@@ -193,8 +193,8 @@ plot(DCfit)
 library(sjPlot)
 p <- plot_model(Seoulfit, type = "diag")
 plot_grid(p)
-p <- plot_model(DCfit, type = "diag")
-plot_grid(p)
+q <- plot_model(DCfit, type = "diag")
+plot_grid(q)
 
 ##Predicted numbers of rented bikes
 dfpred <- data.frame(Temperature = 0, WindSpeed = .5,
