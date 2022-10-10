@@ -187,8 +187,13 @@ confint(DCfit,level=.97)
 ##Testing model assumptions
 plot(fitted(Seoulfit), log(BikeSeoul$Count))
 plot(Seoulfit)
+p <- plot_model(Seoulfit, type = "diag")
+plot_grid(p)
+
 plot(fitted(DCfit), log(BikeDC$Count))
 plot(DCfit)
+p <- plot_model(DCfit, type = "diag")
+plot_grid(p)
 
 ##Predicted numbers of rented bikes
 dfpred <- data.frame(Temperature = 0, WindSpeed = .5,
