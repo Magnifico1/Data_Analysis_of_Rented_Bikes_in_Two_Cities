@@ -1,4 +1,4 @@
-# Exploratory Data Analysis of Bikes Rental in Two Cities
+# Exploratory Data Analysis of Bike Rentals in Two Cities
 
 Rental bike sharing systems have been introduced in many cities worldwide to provide an accessible and sustainable mode of transport. The two datasets used contain the number of bikes rented at each hour in Seoul, South Korea (BikeSeoul.csv) and Washington, D.C., USA (BikeWashingtonDC.csv), together with corresponding meteorological and holiday data.
 
